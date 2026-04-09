@@ -7,16 +7,25 @@ export default function App() {
 
   return (
     <div>
-      <div className="fixed right-4 top-4 z-[9999] flex gap-2">
+      <div className="fixed bottom-20 left-1/2 z-[9999] flex -translate-x-1/2 gap-2 rounded-full bg-[rgba(244,239,231,0.92)] p-2 shadow-lg backdrop-blur md:left-auto md:right-4 md:top-4 md:bottom-auto md:translate-x-0">
         <button
           onClick={() => setView("site")}
-          className="rounded-full bg-black px-4 py-2 text-sm text-white"
+          className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+            view === "site"
+              ? "bg-black text-white"
+              : "bg-white text-black"
+          }`}
         >
           Demo sito
         </button>
+
         <button
           onClick={() => setView("sales")}
-          className="rounded-full bg-[#d6b48a] px-4 py-2 text-sm text-black"
+          className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+            view === "sales"
+              ? "bg-[#d6b48a] text-black"
+              : "bg-white text-black"
+          }`}
         >
           Pagina vendita
         </button>
